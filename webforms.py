@@ -26,7 +26,7 @@ class ProfessorForm(FlaskForm):
     email = StringField("Email",validators=[DataRequired()])
     clg_id = StringField("College Id",validators=[DataRequired()])
     department = SelectField("Department" ,choices=[('cse', 'CSE'), ('ece', 'ECE'), ('mech', 'MECH'), ('civil', 'CIVIL') , ('eee','EEE')], validators=[DataRequired()])
-    role = SelectField("Role" ,choices=[('professor', 'Professor'), ('hod', 'HOD')], validators=[DataRequired()])
+    role = SelectField("Role" ,choices=[('professor', 'Guide'), ('hod', 'HOD')], validators=[DataRequired()])
     date_of_join = DateField("Year Of Join ", validators=[DataRequired()])
 
     password =PasswordField("Password",validators=[DataRequired(), EqualTo('confirmpassword',              message = 'Passwords Must Match!!')])
@@ -44,7 +44,7 @@ class DirectorForm(FlaskForm):
 
 
 class LoginForm(FlaskForm):
-    login_as = SelectField("Login as ", choices=[('student', 'Student'), ('professor', 'Professor'), ('director', 'Director')], validators=[DataRequired()])
+    login_as = SelectField("Login as ", choices=[('student', 'Student'), ('professor', 'Guide'), ('director', 'Director')], validators=[DataRequired()])
     id = StringField("College Id" , validators=[DataRequired()])
     password =PasswordField("Password",validators=[DataRequired()])
     submit = SubmitField(("submit"))
