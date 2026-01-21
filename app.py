@@ -11,7 +11,7 @@ import os
 from werkzeug.utils import secure_filename
 import uuid as uuid
 from sqlalchemy import func, extract, or_
-
+from models import db
 # Load the model
 ProjectModel = load('./savedModels/projectSuggest.joblib')
 
